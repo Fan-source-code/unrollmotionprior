@@ -1,0 +1,32 @@
+# @package _global_
+defaults:
+  - data: cardiac_cmra1res
+  - network: unrollreg1res
+  - loss: mse
+  - training: training1res2
+
+#metric_groups: ["disp_metrics", "seg_metrics", "image_metrics"]
+# metric_groups: ["disp_metrics", "image_metrics"]
+#hparam_metrics: ["total_loss", "dice_avg", "asd_avg", "hd_avg", "negative_det_J", "rmse_image"]
+hparam_metrics: ["val_loss"]
+#reg_weight: 0.5
+
+precision: 16
+gpu: 1
+
+experiment_root:
+run_dir:
+
+hydra:
+  run:
+    dir: ${experiment_root}/${run_dir}/${hydra.job.override_dirname}/${now:%Y-%m-%d_%H-%M-%S}
+  sweep:
+    dir: ${experiment_root}/${run_dir}
+    subdir: ${hydra.job.override_dirname}/${now:%Y-%m-%d_%H-%M-%S}
+  job:
+    config:
+      override_dirname:
+        exclude_keys:
+          - run_dir
+          - gpu
+          - training.trainer.resume_from_checkpoint

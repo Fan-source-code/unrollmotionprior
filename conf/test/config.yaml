@@ -1,0 +1,17 @@
+defaults:
+  - data: cardiac_cmra
+  - model: dl
+
+# metric_groups: ["disp_metrics", "image_metrics", "seg_metrics"]
+metric_groups: ["disp_metrics", "image_metrics"]
+inference: True
+analyse: False
+gpu: 1
+
+model_dir: /home/ubuntu/model_dir
+
+test_dir: test
+
+hydra:
+  run:
+    dir: ${model_dir}/${test_dir}

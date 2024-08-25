@@ -1,0 +1,3 @@
+type: unrollreg
+ckpt: last.ckpt
+ckpt_path: ${model_dir}/checkpoints/epoch=3249-val_metrics/${model.ckpt}

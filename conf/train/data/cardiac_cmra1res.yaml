@@ -1,0 +1,21 @@
+name: cardiac_cmra
+ndim: 3
+
+batch_size: 1
+#16
+num_workers: 48
+shuffle: True
+
+train_limit_data: 1.0
+crop_size: [100, 362, 272]
+
+train_slicing: 'random'
+train_binindex: 'random'
+train_durationindex: 'random'
+
+val_slicing: 'random'
+val_binindex: 'random'
+val_durationindex: 'random'
+
+train_path: /home/ubuntu/TrainingDataset
+val_path: /home/ubuntu/ValidationDataset

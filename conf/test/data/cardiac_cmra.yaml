@@ -1,0 +1,14 @@
+type: 'cardiac_cmra'
+dataset:
+  data_dir: /home/ubuntu/TestingDataset
+  crop_size: [100, 362, 272]
+  # slicing: [0.25, 0.5, 0.75]
+  slicing: [0.5]
+#  slicing: 'None'
+  binindex: 2
+  # slice_range: [28, 47]
+  durationindex: 0
+  Testing: True
+dataloader:
+  batch_size: 1
+  num_workers: 0

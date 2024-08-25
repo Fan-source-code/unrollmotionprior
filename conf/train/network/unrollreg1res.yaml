@@ -1,0 +1,14 @@
+type: unrollreg
+config:
+  ndim: ${data.ndim}
+  size: ${data.crop_size}
+
+  unroll_iterations: 3
+
+  regu_weight: 1
+    
+  regulariser_config:
+    ndim: 3
+    num_layers: 30
+    num_channels: 64
+    input_images: True    
